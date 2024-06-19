@@ -1,3 +1,5 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { SearchResourceComponent } from './search-resource/search-resource.component';
+export const routes: Routes = [
+  { path: 'search', component: SearchResourceComponent },
+];
