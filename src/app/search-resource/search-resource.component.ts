@@ -2,15 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ResourceCardComponent } from '../resource-card/resource-card.component';
-
-interface Resource {
-  _id: string;
-  title: string;
-  description: string;
-  url: string;
-  favIcon: string;
-  categories: string[];
-}
+import { Resource } from '../../interfaces';
 
 @Component({
   selector: 'app-search-resource',
