@@ -10,4 +10,9 @@ import { Resource } from '../../interfaces';
 })
 export class ResourceCardComponent {
   @Input() resource: Resource | undefined;
+  arrowUp: boolean = false;
+
+  flipArrow() {
+    this.arrowUp = !this.arrowUp;
+  }
 }

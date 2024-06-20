@@ -1,13 +1,22 @@
-<li class="resource-card">
+<li class="resource-card {{arrowUp && 'expanded'}}">
   <div class="resource-title">
-    <img src="{{ resource?.favIcon }}" alt="{{ resource?.title }}" />
+    <img class="resource-icon" src="{{ resource?.favIcon }}" alt="{{ resource?.title }}" />
     <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+    <img
+      (click)="flipArrow()"
+      class="arrow-icon {{ arrowUp ? 'up' : 'down' }}"
+      src="arrow-down.svg"
+      alt="arrow down icon"
+    />
   </div>
-  <p>{{ resource?.description }}</p>
-  <hr />
-  <section class="categories-container">
-    @for (category of resource?.categories; track $index){
-    <span class="category-card">{{ category }}</span>
-    }
-  </section>
+  @if (arrowUp){
+    <p>{{ resource?.description }}</p>
+    <hr />
+    <p class="tags-tag">tags:</p>
+    <section class="categories-container">
+      @for (category of resource?.categories; track $index){
+      <span class="category-card">{{ category }}</span>
+      }
+    </section>
+  }
 </li>
