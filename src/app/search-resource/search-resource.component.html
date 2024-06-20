@@ -1,14 +1,18 @@
-<form (submit)="onSearch()">
-  <input type="text" />
-  <button type="submit">Search</button>
+<form id="search-form" (submit)="onSearch()">
+  <input
+    class="search-input"
+    name="searchQuery"
+    [(ngModel)]="searchQuery"
+    type="text"
+    placeholder="Search for resources..."
+  />
+  <button class="btn" type="submit">Search</button>
 </form>
 <ul class="resources-container">
-  @if(searchResults.length !== 0){ 
-    @for (resource of searchResults; track resource._id){
-      <app-resource-card [resource]="resource" />
-    } 
-  }
-  @else{
-    <li>No results found</li>
+  @if(searchResults.length !== 0){ @for (resource of searchResults; track
+  resource._id){
+  <app-resource-card [resource]="resource" />
+  } } @else{
+  <li>No results found</li>
   }
 </ul>

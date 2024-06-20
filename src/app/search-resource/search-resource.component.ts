@@ -11,23 +11,24 @@ import { Resource } from '../../interfaces';
   templateUrl: './search-resource.component.html',
   styleUrl: './search-resource.component.css',
 })
+
 export class SearchResourceComponent {
   searchQuery: string = '';
   searchResults: Resource[] = [];
-  constructor(private http: HttpClient) {
-    this.getResources();
-  }
-
+  
   getResources() {
     this.http
-      .get<Resource[]>('http://localhost:5005/resource')
+      .get<Resource[]>(`http://localhost:5005/resource?searchQuery=${this.searchQuery}`)
       .subscribe((response) => {
         this.searchResults = response;
       });
   }
 
-  onSearch() {
+  constructor(private http: HttpClient) {
     this.getResources();
   }
 
+  onSearch() {
+    this.getResources();
+  }
 }
