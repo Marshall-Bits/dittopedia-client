@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-    background-color: antiquewhite;
+    background-color: white;
     padding: 1em;
     max-width: 300px;
     border-radius: 5px;
@@ -25,15 +25,11 @@
     display: flex;
     gap: .5em;
     flex-wrap: wrap;
-    
 }
 
 .category-card{
     padding: 0.5em 1em;
     background-color: #f0f0f0;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
     font-size: .7em;
-  
 }

@@ -6,3 +6,27 @@
     gap: 1em;
 }
 
+.search-input{
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
+
+#search-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.btn{
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
