@@ -1,0 +1,14 @@
+#btn-up {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  z-index: 1;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 17px;
+  cursor: pointer;
+}
