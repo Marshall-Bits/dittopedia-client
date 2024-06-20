@@ -1,5 +1,13 @@
-<li>
-    <a href={{resource?.url}}>{{resource?.title}}</a>
-    <p>{{resource?.description}}</p>
-    <img src={{resource?.favIcon}} alt={{resource?.title}}>
+<li class="resource-card">
+  <div class="resource-title">
+    <img src="{{ resource?.favIcon }}" alt="{{ resource?.title }}" />
+    <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+  </div>
+  <p>{{ resource?.description }}</p>
+  <hr />
+  <section class="categories-container">
+    @for (category of resource?.categories; track $index){
+    <span class="category-card">{{ category }}</span>
+    }
+  </section>
 </li>

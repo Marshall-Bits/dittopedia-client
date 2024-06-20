@@ -14,13 +14,20 @@ import { Resource } from '../../interfaces';
 export class SearchResourceComponent {
   searchQuery: string = '';
   searchResults: Resource[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getResources();
+  }
 
-  onSearch() {
+  getResources() {
     this.http
       .get<Resource[]>('http://localhost:5005/resource')
       .subscribe((response) => {
         this.searchResults = response;
       });
   }
+
+  onSearch() {
+    this.getResources();
+  }
+
 }

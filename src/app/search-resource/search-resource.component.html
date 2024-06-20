@@ -2,7 +2,7 @@
   <input type="text" />
   <button type="submit">Search</button>
 </form>
-<ul>
+<ul class="resources-container">
   @if(searchResults.length !== 0){ 
     @for (resource of searchResults; track resource._id){
       <app-resource-card [resource]="resource" />
