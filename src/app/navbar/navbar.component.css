@@ -1,0 +1,15 @@
+#ditto-logo, #book-icon {
+  width: 70px;
+  height: 70px;
+  padding: 1em;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #313131;
+    color: white;
+    margin-bottom: 2em;
+}
+
