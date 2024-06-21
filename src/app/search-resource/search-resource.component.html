@@ -1,11 +1,19 @@
 <form id="search-form" (submit)="onSearch()">
-  <input
-    class="search-input"
-    name="searchQuery"
-    [(ngModel)]="searchQuery"
-    type="text"
-    placeholder="Search for resources..."
-  >
+  <section id="input-section">
+    <input
+      class="search-input"
+      name="searchQuery"
+      [(ngModel)]="searchQuery"
+      type="text"
+      placeholder="Search for resources..."
+    />
+    <img
+      (click)="toggleFilterModal()"
+      id="filter-icon"
+      src="./filter.svg"
+      alt="filter icon"
+    />
+  </section>
   <button class="btn" type="submit">Search</button>
 </form>
 <ul class="resources-container">
@@ -16,3 +24,7 @@
   <li>No results found</li>
   }
 </ul>
+
+@if (showFilterModal){
+<app-filter-modal (closeModal)="toggleFilterModal()" (filterOptionsChange)="onFilter($event)"/>
+}

@@ -1,0 +1,20 @@
+<div (click)="close()" class="layout"></div>
+<section class="modal">
+  <div class="checkbox-container">
+    <label>Books </label>
+    <input type="checkbox" (click)="toggleFilterOption('book')"/>
+  </div>
+  <div class="checkbox-container">
+    <label>Videos </label>
+    <input type="checkbox" (click)="toggleFilterOption('video')"/>
+  </div>
+  <div class="checkbox-container">
+    <label>Docs </label>
+    <input type="checkbox" (click)="toggleFilterOption('documentation')"/>
+  </div>
+  <div class="checkbox-container">
+    <label>Assets </label>
+    <input type="checkbox" (click)="toggleFilterOption('assets')"/>
+  </div>
+  <button (click)="filter()" class="btn">Filter</button>
+</section>
