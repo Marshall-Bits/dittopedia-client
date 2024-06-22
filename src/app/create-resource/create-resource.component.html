@@ -1,15 +1,16 @@
+
 @if(loading){
-<p>Our Ditto AI is working...</p>
+  <p>Our Ditto AI is working...</p>
 }@else { @if(resourceResponse){
-<form
+  <form
   (keydown.enter)="$event.preventDefault()"
   (submit)="createResource($event)"
   id="create-resource-form"
->
+  >
   <h3>{{ responseTitle }}</h3>
   <img
-    src="{{ categorizeError ? './ditto-sad.png' : './ditto-happy.png' }}"
-    alt="ditto image"
+  src="{{ categorizeError ? './ditto-sad.png' : './ditto-happy.png' }}"
+  alt="ditto image"
   />
   <p>Modify the suggested fields as you like or create the resource directly</p>
   <h4>{{ newResource.url }}</h4>
@@ -17,48 +18,52 @@
   <input [(ngModel)]="newResource.title" name="title" type="text" />
   <label for="description">Description</label>
   <textarea
-    required
-    class="description-input"
-    [(ngModel)]="newResource.description"
-    name="description"
-    type="text"
+  required
+  class="description-input"
+  [(ngModel)]="newResource.description"
+  name="description"
+  type="text"
   >
-  </textarea>
-  <label for="category">Add categories</label>
-  <div class="add-category-container">
-    <input
-      [(ngModel)]="categoryInput"
-      (keyup.enter)="addCategory()"
-      name="category"
-      type="text"
-    />
-    <img
-      class="add-icon"
-      (click)="addCategory()"
-      src="./add.svg"
-      alt="add icon"
-    />
-  </div>
-  <section class="categories-container">
-    @for(category of resourceResponse.categories; track $index){
+</textarea>
+<label for="category">Add categories</label>
+<div class="add-category-container">
+  <input
+  [(ngModel)]="categoryInput"
+  (keyup.enter)="addCategory()"
+  name="category"
+  type="text"
+  />
+  <img
+  class="add-icon"
+  (click)="addCategory()"
+  src="./add.svg"
+  alt="add icon"
+  />
+</div>
+<section class="categories-container">
+  @for(category of resourceResponse.categories; track $index){
     <div class="category-tag">
       {{ category }}
       <img
-        (click)="deleteCategory($index)"
-        class="close-icon"
-        src="./close.svg"
-        alt="close icon"
+      (click)="deleteCategory($index)"
+      class="close-icon"
+      src="./close.svg"
+      alt="close icon"
       />
     </div>
-    }
-  </section>
-  <button class="btn">Create resource</button>
+  }
+</section>
+<button type="submit" class="btn">Create resource</button>
+<button class="btn cancel" (click)="reset()">Cancel</button>
 </form>
 }@else {
-<form id="categorize-form" (submit)="categorizeResource()">
-  <h3>Add new resource</h3>
-  <label for="title">URL</label>
-  <input [(ngModel)]="url" name="url" type="text" />
-  <button class="btn">Send</button>
-</form>
+  <form id="categorize-form" (submit)="categorizeResource()">
+    <h3>Add new resource</h3>
+    <label for="title">URL</label>
+    <input [(ngModel)]="url" name="url" type="text" />
+    <button class="btn">Send</button>
+  </form>
+  @if (urlError){
+  <p class="error">{{ urlError }}</p>
+  } 
 } }

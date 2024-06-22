@@ -19,6 +19,7 @@ export class CreateResourceComponent {
   loading: boolean = false;
   responseTitle: string = '';
   categorizeError: boolean = false;
+  urlError: string = '';
 
   newResource: Resource = emptyResource;
 
@@ -29,8 +30,15 @@ export class CreateResourceComponent {
     this.http
       .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`)
       .pipe(
-        catchError((error) => {
-          console.error(error);
+        catchError((res) => {
+          if (res.status === 400) {
+            this.urlError = res.error.message;
+            setTimeout(() => {
+              this.urlError = '';
+            }, 3000);
+            this.loading = false;
+            return [];
+          }
           this.resourceResponse = emptyResource;
           this.resourceResponse.url = this.url;
           this.loading = false;
@@ -77,5 +85,11 @@ export class CreateResourceComponent {
 
     this.newResource.categories.push(category);
     this.categoryInput = '';
+  }
+
+  reset() {
+    this.newResource = emptyResource;
+    this.resourceResponse = null;
+    this.url = '';
   }
 }
