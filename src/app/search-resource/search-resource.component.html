@@ -17,14 +17,22 @@
   <button class="btn" type="submit">Search</button>
 </form>
 <ul class="resources-container">
-  @if(searchResults.length !== 0){ @for (resource of searchResults; track
-  resource._id){
-  <app-resource-card [resource]="resource" />
-  } } @else{
-  <li>No results found</li>
+  @if(searchResults?.length !== 0){ 
+    @for (resource of searchResults; track resource._id){
+      <app-resource-card [resource]="resource" />
+    } 
+  } @else{
+    <li>No results found</li>
+  } 
+  
+  @if(errorMessage){
+    <li class="error">{{ errorMessage }}</li>
   }
 </ul>
 
 @if (showFilterModal){
-<app-filter-modal (closeModal)="toggleFilterModal()" (filterOptionsChange)="onFilter($event)"/>
+<app-filter-modal
+  (closeModal)="toggleFilterModal()"
+  (filterOptionsChange)="onFilter($event)"
+/>
 }

@@ -1,14 +1,23 @@
-@if(askingAi){
+@if(loading){
 <p>Our Ditto AI is working...</p>
 }@else { @if(resourceResponse){
-<form (keydown.enter)="$event.preventDefault()" (submit)="createResource($event)" id="create-resource-form">
-  <h3>This is what ditto has suggested</h3>
+<form
+  (keydown.enter)="$event.preventDefault()"
+  (submit)="createResource($event)"
+  id="create-resource-form"
+>
+  <h3>{{ responseTitle }}</h3>
+  <img
+    src="{{ categorizeError ? './ditto-sad.png' : './ditto-happy.png' }}"
+    alt="ditto image"
+  />
   <p>Modify the suggested fields as you like or create the resource directly</p>
   <h4>{{ newResource.url }}</h4>
   <label for="title">Title</label>
   <input [(ngModel)]="newResource.title" name="title" type="text" />
   <label for="description">Description</label>
   <textarea
+    required
     class="description-input"
     [(ngModel)]="newResource.description"
     name="description"

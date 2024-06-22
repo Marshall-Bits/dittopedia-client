@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ResourceCardComponent } from '../resource-card/resource-card.component';
 import { Resource } from '../../interfaces';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-search-resource',
@@ -15,8 +16,9 @@ import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 export class SearchResourceComponent {
   searchQuery: string = '';
   searchQueries: string[] = [];
-  searchResults: Resource[] = [];
+  searchResults: Resource[] | null = null;
   showFilterModal: boolean = false;
+  errorMessage: string = '';
 
   constructor(private http: HttpClient) {
     this.getResources();
@@ -31,6 +33,14 @@ export class SearchResourceComponent {
 
     this.http
       .get<Resource[]>(`http://localhost:5005/resource`, { params })
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          this.errorMessage = 'Error while fetching resources';
+          this.searchResults = [];
+          return [];
+        })
+      )
       .subscribe((response) => {
         this.searchResults = response;
         this.searchQueries = [];

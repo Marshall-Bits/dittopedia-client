@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Resource } from '../../interfaces';
+import emptyResource from '../../utils/emptyResource';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-create-resource',
@@ -14,22 +16,29 @@ export class CreateResourceComponent {
   url: string = '';
   resourceResponse: Resource | null = null;
   categoryInput: string = '';
-  askingAi: boolean = false;
+  loading: boolean = false;
+  responseTitle: string = '';
+  categorizeError: boolean = false;
 
-  newResource: Resource = {
-    title: '',
-    url: '',
-    description: '',
-    categories: [],
-    favIcon: '',
-  };
+  newResource: Resource = emptyResource;
 
   constructor(private http: HttpClient) {}
 
   categorizeResource() {
-    this.askingAi = true;
+    this.loading = true;
     this.http
       .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`)
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          this.resourceResponse = emptyResource;
+          this.resourceResponse.url = this.url;
+          this.loading = false;
+          this.categorizeError = true;
+          this.responseTitle = 'Ditto was unable to categorize the resource.';
+          return [];
+        })
+      )
       .subscribe((response) => {
         this.resourceResponse = response;
         this.newResource = {
@@ -39,7 +48,9 @@ export class CreateResourceComponent {
           categories: response.categories,
           favIcon: response.favIcon,
         };
-        this.askingAi = false;
+        this.responseTitle = 'Ditto has categorized the resource.';
+        this.categorizeError = false;
+        this.loading = false;
       });
   }
 
@@ -47,14 +58,8 @@ export class CreateResourceComponent {
     event.preventDefault();
     this.http
       .post<Resource>('http://localhost:5005/resource', this.newResource)
-      .subscribe((response) => {
-        this.newResource = {
-          title: '',
-          url: '',
-          description: '',
-          categories: [],
-          favIcon: '',
-        };
+      .subscribe(() => {
+        this.newResource = emptyResource;
         this.resourceResponse = null;
         this.url = '';
       });
