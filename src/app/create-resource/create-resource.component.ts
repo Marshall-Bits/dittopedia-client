@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Resource } from '../../interfaces';
 import emptyResource from '../../utils/emptyResource';
 import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs';
+import { catchError, EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-create-resource',
@@ -37,14 +37,14 @@ export class CreateResourceComponent {
               this.urlError = '';
             }, 3000);
             this.loading = false;
-            return [];
+            return EMPTY;
           }
           this.resourceResponse = emptyResource;
           this.resourceResponse.url = this.url;
           this.loading = false;
           this.categorizeError = true;
           this.responseTitle = 'Ditto was unable to categorize the resource.';
-          return [];
+          return EMPTY;
         })
       )
       .subscribe((response) => {
