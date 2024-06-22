@@ -1,13 +1,12 @@
-.home-container {
-  max-width: 300px;
+:host {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  max-width: 400px;
   h2 {
     font-size: 1.5em;
   }
-  margin-bottom: 8em;
 }
 
 .avatar,
@@ -38,6 +37,6 @@
   display: block;
 }
 
-.disclamer{
+.disclaimer{
     font-size: 0.8em;
 }

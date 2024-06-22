@@ -1,3 +1,11 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 form {
   width: 100%;
   display: flex;
@@ -13,19 +21,19 @@ form {
   }
 
   p {
-    width: 300px;
+    width: 100%;
   }
 
   label {
     font-size: 1.3em;
-    width: 300px;
+    width: 100%;
     text-align: left;
     font-weight: bold;
   }
 }
 
 .description-input {
-  width: 300px;
+  width: 100%;
   height: 100px;
   padding: 0.5em 1em;
   border-radius: 5px;
@@ -48,7 +56,8 @@ form {
   display: flex;
   gap: 0.5em;
   flex-wrap: wrap;
-  max-width: 300px;
+  max-width: 100%;
+  padding: 1em 0;
 }
 
 .close-icon {
@@ -60,6 +69,15 @@ form {
 
 .add-category-container {
   position: relative;
+  width: 100%;
+  max-width: 300px;
+  input {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: "Roboto", sans-serif;
+  }
 }
 
 .add-icon {
@@ -69,4 +87,45 @@ form {
   right: 0.5em;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#categorize-form {
+  max-width: 300px;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+@media (width> 768px) {
+  :host {
+    text-align: center;
+  }
+  form{
+    align-items: flex-start;
+    h3, p, h4{
+      width: 100%;
+    }
+    img{
+      margin: 0 auto;
+    }
+  }
+
+  .btn-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

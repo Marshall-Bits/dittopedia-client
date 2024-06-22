@@ -16,19 +16,19 @@
   </section>
   <button class="btn" type="submit">Search</button>
 </form>
-<ul class="resources-container">
-  @if(searchResults?.length !== 0){ 
+@if(searchResults?.length !== 0){ 
+  <ul class="resources-container">
     @for (resource of searchResults; track resource._id){
       <app-resource-card [resource]="resource" />
     } 
+  </ul>
   } @else{
-    <li>No results found</li>
+    <p>No results found</p>
   } 
   
   @if(errorMessage){
     <li class="error">{{ errorMessage }}</li>
   }
-</ul>
 
 @if (showFilterModal){
 <app-filter-modal
