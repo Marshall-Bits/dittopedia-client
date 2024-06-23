@@ -1,3 +1,5 @@
-<button id="btn-up" (click)="scrollToTop()">
-  <img src="./up.svg" alt="arrow up" />
-</button>
+@if(isVisible){
+  <button id="btn-up" (click)="scrollToTop()">
+    <img src="./up.svg" alt="arrow up" />
+  </button>
+}
