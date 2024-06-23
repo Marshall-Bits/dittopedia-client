@@ -1,20 +1,26 @@
 <div (click)="close()" class="layout"></div>
 <section class="modal">
+  <img
+    (click)="close()"
+    class="close-icon"
+    src="./close.svg"
+    alt="close icon"
+  />
   <div class="checkbox-container">
     <label>Books </label>
-    <input type="checkbox" (click)="toggleFilterOption('book')"/>
+    <input type="checkbox" (click)="toggleFilterOption('book')" />
   </div>
   <div class="checkbox-container">
     <label>Videos </label>
-    <input type="checkbox" (click)="toggleFilterOption('video')"/>
+    <input type="checkbox" (click)="toggleFilterOption('video')" />
   </div>
   <div class="checkbox-container">
     <label>Docs </label>
-    <input type="checkbox" (click)="toggleFilterOption('documentation')"/>
+    <input type="checkbox" (click)="toggleFilterOption('documentation')" />
   </div>
   <div class="checkbox-container">
     <label>Assets </label>
-    <input type="checkbox" (click)="toggleFilterOption('assets')"/>
+    <input type="checkbox" (click)="toggleFilterOption('assets')" />
   </div>
   <button (click)="filter()" class="btn">Filter</button>
 </section>

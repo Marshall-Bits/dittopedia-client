@@ -1,0 +1,21 @@
+<div (click)="close()" class="layout"></div>
+<div class="modal">
+  <img
+    (click)="close()"
+    class="close-icon"
+    src="./close.svg"
+    alt="close icon"
+  />
+  <h2>{{ resource?.title }}</h2>
+  <p>{{ resource?.description }}</p>
+  <hr />
+  <p class="tags-tag">tags:</p>
+  <section class="categories-container">
+    @for (category of resource?.categories; track $index){
+    <span class="category-card">{{ category }}</span>
+    }
+  </section>
+  <a href="{{ resource?.url }}" target="_blank" rel="noopener noreferrer">
+    <button class="btn">Visit</button>
+  </a>
+</div>

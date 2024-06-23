@@ -34,33 +34,11 @@
   }
 }
 
-.categories-container {
-  display: flex;
-  gap: 0.5em;
-  flex-wrap: wrap;
-}
-
-.category-card {
-  padding: 0.5em 1em;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  font-size: 0.7em;
-}
-
-.arrow-icon {
+.zoom-icon {
   padding: 6px;
   width: 35px;
   height: 35px;
   cursor: pointer;
-  transition: 300ms;
-}
-
-.up {
-  transform: rotate(-180deg);
-}
-
-.down {
-  transform: rotate(0deg);
 }
 
 .tags-tag {

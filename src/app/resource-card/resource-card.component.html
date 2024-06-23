@@ -3,20 +3,13 @@
     <img class="resource-icon" src="{{ resource?.favIcon }}" alt="{{ resource?.title }}" />
     <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
     <img
-      (click)="flipArrow()"
-      class="arrow-icon {{ arrowUp ? 'up' : 'down' }}"
-      src="./arrow-down.svg"
-      alt="arrow down icon"
+      (click)="openModal()"
+      class="zoom-icon"
+      src="./zoom.svg"
+      alt="zoom icon"
     />
   </div>
-  @if (arrowUp){
-    <p>{{ resource?.description }}</p>
-    <hr />
-    <p class="tags-tag">tags:</p>
-    <section class="categories-container">
-      @for (category of resource?.categories; track $index){
-      <span class="category-card">{{ category }}</span>
-      }
-    </section>
-  }
 </li>
+@if(showModal){
+  <app-card-modal (closeModal)="closeModal()" [resource]="resource"  />
+}

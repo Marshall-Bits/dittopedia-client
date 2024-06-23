@@ -1,0 +1,17 @@
+.categories-container {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  padding: 0.5em 1em;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+
+a{
+  margin: 0 auto;
+  width: 100%;
+}
