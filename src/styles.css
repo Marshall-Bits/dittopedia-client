@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #e8e9fd;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
 }
 
 .btn{

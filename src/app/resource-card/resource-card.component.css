@@ -1,11 +1,10 @@
-
 .resource-card {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1em;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.651);
   padding: 1em;
   width: 300px;
   min-height: 70px;
@@ -13,6 +12,11 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   transition: 300ms;
   height: 70px;
+  a {
+    text-decoration: none;
+    color: #313131;
+    font-weight: 500;
+  }
 }
 
 .resource-card.expanded {
