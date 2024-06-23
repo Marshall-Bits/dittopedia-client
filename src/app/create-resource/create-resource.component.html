@@ -29,6 +29,16 @@
         type="text"
       >
       </textarea>
+      <label for="mainCategory">Main category</label>
+      <select [(ngModel)]="newResource.mainCategory" name="mainCategory">
+        <option value="books">Books</option>
+        <option value="videos">Videos</option>
+        <option value="courses">Courses</option>
+        <option value="documentation">Documentation</option>
+        <option value="assets">Assets</option>
+        <option value="tools">Tools</option>
+        <option value="news">News</option>
+      </select>
       <label for="category">Add categories</label>
       <div class="add-category-container">
         <input
@@ -50,7 +60,7 @@
             {{ category }}
             <img
             (click)="deleteCategory($index)"
-            class="close-icon"
+            class="delete-icon"
             src="./close.svg"
             alt="close icon"
             />

@@ -55,6 +55,7 @@ export class CreateResourceComponent {
           description: response.description,
           categories: response.categories,
           favIcon: response.favIcon,
+          mainCategory: response.mainCategory,
         };
         this.responseTitle = 'Ditto has categorized the resource!';
         this.categorizeError = false;

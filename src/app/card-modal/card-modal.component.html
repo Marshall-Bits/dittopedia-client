@@ -8,11 +8,12 @@
   />
   <h2>{{ resource?.title }}</h2>
   <p>{{ resource?.description }}</p>
+  <p><b>Main category:</b> {{ resource?.mainCategory }}</p>
   <hr />
   <p class="tags-tag">tags:</p>
   <section class="categories-container">
     @for (category of resource?.categories; track $index){
-    <span class="category-card">{{ category }}</span>
+        <span class="category-card">{{ category }}</span>
     }
   </section>
   <a href="{{ resource?.url }}" target="_blank" rel="noopener noreferrer">

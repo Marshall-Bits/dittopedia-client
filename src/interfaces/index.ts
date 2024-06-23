@@ -5,4 +5,5 @@ export interface Resource {
   url: string;
   favIcon: string;
   categories: string[];
+  mainCategory: string;
 }

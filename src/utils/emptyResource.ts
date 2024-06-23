@@ -6,6 +6,7 @@ const emptyResource: Resource = {
   url: '',
   favIcon: '',
   categories: [],
+  mainCategory: '',
 };
 
 export default emptyResource;

@@ -15,12 +15,24 @@
     <input type="checkbox" (click)="toggleFilterOption('video')" />
   </div>
   <div class="checkbox-container">
+    <label>Courses </label>
+    <input type="checkbox" (click)="toggleFilterOption('courses')" />
+  </div>
+  <div class="checkbox-container">
     <label>Docs </label>
     <input type="checkbox" (click)="toggleFilterOption('documentation')" />
   </div>
   <div class="checkbox-container">
     <label>Assets </label>
     <input type="checkbox" (click)="toggleFilterOption('assets')" />
+  </div>
+  <div class="checkbox-container">
+    <label>Tools </label>
+    <input type="checkbox" (click)="toggleFilterOption('tools')" />
+  </div>
+  <div class="checkbox-container">
+    <label>News </label>
+    <input type="checkbox" (click)="toggleFilterOption('news')" />
   </div>
   <button (click)="filter()" class="btn">Filter</button>
 </section>
