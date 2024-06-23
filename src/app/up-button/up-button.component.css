@@ -11,4 +11,11 @@
   height: 45px;
   font-size: 17px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 35px;
+  }
 }
