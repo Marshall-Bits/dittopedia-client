@@ -16,6 +16,11 @@
   </section>
   <button class="btn" type="submit">Search</button>
 </form>
+
+@if(loading){
+  <p>Loading...</p>
+}
+
 @if(searchResults?.length !== 0){
 <ul class="resources-container">
   @for (resource of searchResults; track resource._id){

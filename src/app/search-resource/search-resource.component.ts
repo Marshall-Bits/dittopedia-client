@@ -20,6 +20,7 @@ export class SearchResourceComponent {
   searchResults: Resource[] | null = null;
   showFilterModal: boolean = false;
   errorMessage: string = '';
+  loading: boolean = false;
 
   constructor(private http: HttpClient) {
     this.getResources();
@@ -27,6 +28,7 @@ export class SearchResourceComponent {
 
   getResources() {
     let params = new HttpParams();
+    this.loading = true;
 
     this.searchQueries.forEach((query) => {
       params = params.append('searchQuery', query);
@@ -39,10 +41,12 @@ export class SearchResourceComponent {
           console.error(error);
           this.errorMessage = 'Error while fetching resources';
           this.searchResults = [];
+          this.loading = false;
           return [];
         })
       )
       .subscribe((response) => {
+        this.loading = false;
         this.searchResults = response;
         this.searchQueries = [];
       });
