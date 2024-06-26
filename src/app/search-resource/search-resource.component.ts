@@ -5,11 +5,12 @@ import { ResourceCardComponent } from '../resource-card/resource-card.component'
 import { Resource } from '../../interfaces';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 import { catchError } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search-resource',
   standalone: true,
-  imports: [FormsModule, ResourceCardComponent, FilterModalComponent],
+  imports: [FormsModule, ResourceCardComponent, FilterModalComponent, RouterLink],
   templateUrl: './search-resource.component.html',
   styleUrl: './search-resource.component.css',
 })
