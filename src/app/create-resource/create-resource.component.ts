@@ -28,7 +28,7 @@ export class CreateResourceComponent {
   categorizeResource() {
     this.loading = true;
     this.http
-      .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`)
+      .get<Resource>(`https://dittopedia-api.adaptable.app/categorize?url=${this.url}`)
       .pipe(
         catchError((res) => {
           if (res.status === 400) {
@@ -66,7 +66,7 @@ export class CreateResourceComponent {
   createResource(event: Event) {
     event.preventDefault();
     this.http
-      .post<Resource>('http://localhost:5005/resource', this.newResource)
+      .post<Resource>('https://dittopedia-api.adaptable.app/resource', this.newResource)
       .subscribe(() => {
         this.newResource = emptyResource;
         this.resourceResponse = null;

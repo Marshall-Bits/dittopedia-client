@@ -35,7 +35,7 @@ export class SearchResourceComponent {
     });
 
     this.http
-      .get<Resource[]>(`http://localhost:5005/resource`, { params })
+      .get<Resource[]>(`https://dittopedia-api.adaptable.app/resource`, { params })
       .pipe(
         catchError((error) => {
           console.error(error);
