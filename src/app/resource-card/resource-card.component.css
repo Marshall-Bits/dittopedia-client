@@ -9,13 +9,19 @@
   width: 300px;
   min-height: 70px;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
   transition: 300ms;
   height: 70px;
+
   a {
     text-decoration: none;
     color: #313131;
     font-weight: 500;
+  }
+
+  &:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 8px 8px 5px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -47,4 +53,15 @@
 
 .tags-tag {
   font-size: 0.7em;
+}
+
+#dust-animation{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 150%;
+  height: 150%;
+  z-index: -1000;
+  pointer-events: none;
 }
