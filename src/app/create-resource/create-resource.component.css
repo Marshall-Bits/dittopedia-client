@@ -20,6 +20,11 @@ form {
     font-weight: bold;
   }
 
+  h4 {
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+
   p {
     width: 100%;
   }
@@ -114,12 +119,14 @@ form {
   :host {
     text-align: center;
   }
-  form{
+  form {
     align-items: flex-start;
-    h3, p, h4{
+    h3,
+    p,
+    h4 {
       width: 100%;
     }
-    img{
+    img {
       margin: 0 auto;
     }
   }
