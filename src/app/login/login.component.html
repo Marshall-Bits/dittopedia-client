@@ -1,0 +1,19 @@
+<h3>Login</h3>
+<form (ngSubmit)="onLogin()">
+  <div>
+    <label for="email">Email:</label>
+    <input [(ngModel)]="email" name="email" type="text" id="email" />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input [(ngModel)]="password" name="password" type="password" id="password" />
+  </div>
+  <button type="submit" class="btn">Submit</button>
+</form>
+@if(loading){
+  <p>Logging in...</p>
+} 
+
+@if(errorMessage){
+  <p class="error">{{ errorMessage }}</p>
+}
