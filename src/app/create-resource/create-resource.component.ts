@@ -4,6 +4,7 @@ import { Resource } from '../../interfaces';
 import emptyResource from '../../utils/emptyResource';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, EMPTY } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-create-resource',
@@ -40,7 +41,7 @@ export class CreateResourceComponent {
     });
 
     this.http
-      .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`, {
+      .get<Resource>(`${environment.apiUrl}/categorize?url=${this.url}`, {
         headers,
       })
       .pipe(
@@ -88,7 +89,7 @@ export class CreateResourceComponent {
   createResource(event: Event) {
     event.preventDefault();
     this.http
-      .post<Resource>('http://localhost:5005/resource', this.newResource)
+      .post<Resource>(`${environment.apiUrl}/resource`, this.newResource)
       .subscribe(() => {
         this.newResource = emptyResource;
         this.resourceResponse = null;

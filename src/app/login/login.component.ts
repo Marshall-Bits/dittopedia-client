@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -22,19 +23,23 @@ export class LoginComponent {
   onLogin() {
     this.errorMessage = '';
     this.loading = true;
-    this.http.post<any>('http://localhost:5005/auth/login', { email: this.email, password: this.password })
-    .pipe(
-      catchError((error) => {
-        console.error(error);
-        this.errorMessage = 'Error while logging in';
-        this.loading = false;
-        return [];
+    this.http
+      .post<any>(`${environment.apiUrl}/auth/login`, {
+        email: this.email,
+        password: this.password,
       })
-    )
-    .subscribe((response) => {
-      this.loading = false;
-      localStorage.setItem('accessToken', response?.accessToken);
-      this.router.navigate(['/search']);
-    });
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          this.errorMessage = 'Error while logging in';
+          this.loading = false;
+          return [];
+        })
+      )
+      .subscribe((response) => {
+        this.loading = false;
+        localStorage.setItem('accessToken', response?.accessToken);
+        this.router.navigate(['/search']);
+      });
   }
 }

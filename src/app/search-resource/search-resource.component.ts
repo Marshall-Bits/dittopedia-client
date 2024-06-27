@@ -6,6 +6,7 @@ import { Resource } from '../../interfaces';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 import { catchError } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-search-resource',
@@ -26,6 +27,8 @@ export class SearchResourceComponent {
     this.getResources();
   }
 
+  
+  
   getResources() {
     let params = new HttpParams();
     this.loading = true;
@@ -35,7 +38,7 @@ export class SearchResourceComponent {
     });
 
     this.http
-      .get<Resource[]>(`http://localhost:5005/resource`, { params })
+      .get<Resource[]>(`${environment.apiUrl}/resource`, { params })
       .pipe(
         catchError((error) => {
           console.error(error);
