@@ -28,7 +28,6 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-
 }
 
 .social-icon {
@@ -37,6 +36,18 @@
   display: block;
 }
 
-.disclaimer{
-    font-size: 0.8em;
+.disclaimer {
+  font-size: 0.8em;
+}
+
+@media screen and (width> 960px) {
+  :host {
+    max-width: 700px;
+    font-size: 1.2em;
+  }
+
+  .ditto{
+    width: 150px;
+    height: 150px;
+  }
 }
