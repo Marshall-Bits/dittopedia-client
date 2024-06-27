@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { catchError } from 'rxjs';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   email: string = '';
   password: string = '';
@@ -33,6 +34,7 @@ export class LoginComponent {
     .subscribe((response) => {
       this.loading = false;
       localStorage.setItem('accessToken', response?.accessToken);
+      this.router.navigate(['/search']);
     });
   }
 }
