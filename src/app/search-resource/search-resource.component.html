@@ -1,6 +1,7 @@
 <form id="search-form" (submit)="onSearch()">
   <section id="input-section">
     <input
+      (input)="onSearch()"
       class="search-input"
       name="searchQuery"
       [(ngModel)]="searchQuery"

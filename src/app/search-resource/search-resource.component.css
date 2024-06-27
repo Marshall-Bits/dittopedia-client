@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   gap: 2em;
+  p{
+    text-align: center;
+  }
 }
 
 .resources-container {
@@ -13,9 +16,6 @@
   justify-content: flex-start;
   gap: 1em;
   
-  p{
-    text-align: center;
-  }
 
 }
 
