@@ -7,3 +7,8 @@ export interface Resource {
   categories: string[];
   mainCategory: string;
 }
+
+export interface CategoryResources {
+  category: string;
+  resources: Resource[];
+}

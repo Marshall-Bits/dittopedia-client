@@ -18,22 +18,28 @@
 </form>
 
 @if(loading){
-  <p>Loading...</p>
+<p>Loading...</p>
 }
 
-@if(searchResults?.length !== 0){
-<ul class="resources-container">
-  @for (resource of searchResults; track resource._id){
-  <app-resource-card [resource]="resource" />
+@for (result of searchResults; track result){
+    <div class="results-container">
+      <h3>{{result.category.toUpperCase()}}</h3>
+      <ul class="resources-container">
+        @for(resource of result.resources; track resource){
+            <app-resource-card [resource]="resource" />
+        }
+      </ul>
+    </div>
+    <!-- <app-resource-card [resource]="resource" /> -->
   }
-</ul>
-} @else{
-<p>No results found</p>
-} @if(errorMessage){
+  @empty{
+    <p>No results found</p>
+  }
+  @if(errorMessage){
 <p class="error">{{ errorMessage }}</p>
 }
 
-<a routerLink="/resource/create">
+<a id="add-link" routerLink="/resource/create">
   <img id="add-icon" src="./add.svg" alt="add icon" />
 </a>
 
