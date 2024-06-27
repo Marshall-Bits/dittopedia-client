@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ResourceCardComponent } from '../resource-card/resource-card.component';
-import { Resource, CategoryResources } from '../../interfaces';
+import { CategoryResources } from '../../interfaces';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 import { catchError } from 'rxjs';
 import { RouterLink } from '@angular/router';
