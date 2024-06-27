@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Resource } from '../../interfaces';
 import emptyResource from '../../utils/emptyResource';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, EMPTY } from 'rxjs';
 
 @Component({
@@ -26,9 +26,23 @@ export class CreateResourceComponent {
   constructor(private http: HttpClient) {}
 
   categorizeResource() {
+    const accessToken = localStorage.getItem('accessToken');
+
+    if (!accessToken) {
+      this.urlError =
+        'You are not logged in. Please log in to categorize resources.';
+      return;
+    }
     this.loading = true;
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${accessToken}`,
+    });
+
     this.http
-      .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`)
+      .get<Resource>(`http://localhost:5005/categorize?url=${this.url}`, {
+        headers,
+      })
       .pipe(
         catchError((res) => {
           if (res.status === 400) {
@@ -38,13 +52,21 @@ export class CreateResourceComponent {
             }, 3000);
             this.loading = false;
             return EMPTY;
+          } else if (res.status === 401) {
+            this.urlError = 'You are not authorized to categorize resources.';
+            setTimeout(() => {
+              this.urlError = '';
+            }, 3000);
+            this.loading = false;
+            return EMPTY;
+          } else {
+            this.resourceResponse = emptyResource;
+            this.resourceResponse.url = this.url;
+            this.loading = false;
+            this.categorizeError = true;
+            this.responseTitle = 'Ditto was unable to categorize the resource.';
+            return EMPTY;
           }
-          this.resourceResponse = emptyResource;
-          this.resourceResponse.url = this.url;
-          this.loading = false;
-          this.categorizeError = true;
-          this.responseTitle = 'Ditto was unable to categorize the resource.';
-          return EMPTY;
         })
       )
       .subscribe((response) => {
