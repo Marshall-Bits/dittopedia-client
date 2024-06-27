@@ -28,6 +28,9 @@ export class CreateResourceComponent {
 
   categorizeResource() {
     const accessToken = localStorage.getItem('accessToken');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${accessToken}`,
+    });
 
     if (!accessToken) {
       this.urlError =
@@ -35,10 +38,6 @@ export class CreateResourceComponent {
       return;
     }
     this.loading = true;
-
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${accessToken}`,
-    });
 
     this.http
       .get<Resource>(`${environment.apiUrl}/categorize?url=${this.url}`, {
@@ -88,8 +87,15 @@ export class CreateResourceComponent {
 
   createResource(event: Event) {
     event.preventDefault();
+    const accessToken = localStorage.getItem('accessToken');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${accessToken}`,
+    });
+
     this.http
-      .post<Resource>(`${environment.apiUrl}/resource`, this.newResource)
+      .post<Resource>(`${environment.apiUrl}/resource`, this.newResource, {
+        headers,
+      })
       .subscribe(() => {
         this.newResource = emptyResource;
         this.resourceResponse = null;
