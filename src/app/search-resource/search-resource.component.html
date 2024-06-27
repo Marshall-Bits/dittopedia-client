@@ -15,18 +15,17 @@
       alt="filter icon"
     />
   </section>
-  <button class="btn" type="submit">Search</button>
 </form>
 
 @if(loading){
 <p>Loading...</p>
 }
 
-@for (result of searchResults; track result){
+@for (result of searchResults; track $index){
     <div class="results-container">
       <h3>{{result.category.toUpperCase()}}</h3>
       <ul class="resources-container">
-        @for(resource of result.resources; track resource){
+        @for(resource of result.resources; track resource._id){
             <app-resource-card [resource]="resource" />
         }
       </ul>

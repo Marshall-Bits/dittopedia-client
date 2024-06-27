@@ -32,6 +32,7 @@ export class SearchResourceComponent {
   getResources() {
     let params = new HttpParams();
     this.loading = true;
+    this.searchQueries.push(this.searchQuery);
 
     this.searchQueries.forEach((query) => {
       params = params.append('searchQuery', query);
@@ -49,8 +50,6 @@ export class SearchResourceComponent {
         })
       )
       .subscribe((response) => {
-        console.log(response);
-        
         this.loading = false;
         this.searchResults = response;
         this.searchQueries = [];
@@ -58,10 +57,9 @@ export class SearchResourceComponent {
   }
 
   onSearch() {
-    this.searchQueries.push(this.searchQuery);
     this.getResources();
   }
-
+  
   onFilter(filterOptions: string[]) {
     this.searchQueries = this.searchQueries.concat(filterOptions);
     this.getResources();
