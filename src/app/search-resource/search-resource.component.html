@@ -18,7 +18,14 @@
 </form>
 
 @if(loading){
-<p>Loading...</p>
+  <div class="results-container">
+    <h3>LOADING RESOURCES</h3>
+    <ul class="resources-container">
+      @for (card of loadingCards; track $index){
+        <app-loading-card />
+      }
+    </ul>
+  </div>
 }
 
 @for (result of searchResults; track $index){

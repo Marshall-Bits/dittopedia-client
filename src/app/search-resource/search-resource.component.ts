@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ResourceCardComponent } from '../resource-card/resource-card.component';
 import { CategoryResources } from '../../interfaces';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
+import { LoadingCardComponent } from '../loading-card/loading-card.component';
 import { catchError } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { environment } from '../../environments/environment';
@@ -16,6 +17,7 @@ import { AuthService } from '../services/auth.service';
     FormsModule,
     ResourceCardComponent,
     FilterModalComponent,
+    LoadingCardComponent,
     RouterLink,
   ],
   templateUrl: './search-resource.component.html',
@@ -29,6 +31,7 @@ export class SearchResourceComponent implements OnInit {
   errorMessage: string = '';
   loading: boolean = false;
   isAdmin: boolean = false;
+  loadingCards = new Array(3);
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

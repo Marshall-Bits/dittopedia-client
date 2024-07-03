@@ -1,7 +1,13 @@
-<li class="resource-card {{arrowUp && 'expanded'}}">
+<li class="resource-card {{ arrowUp && 'expanded' }}">
   <div class="resource-title">
-    <img class="resource-icon" src="{{ resource?.favIcon }}" alt="{{ resource?.title }}" />
-    <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+    <img
+      class="resource-icon"
+      src="{{ resource?.favIcon }}"
+      alt="{{ resource?.title }}"
+    />
+    <div class="link-container">
+      <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+    </div>
     <img
       (click)="openModal()"
       class="zoom-icon"
@@ -10,6 +16,7 @@
     />
   </div>
 </li>
+
 @if(showModal){
-  <app-card-modal (closeModal)="closeModal()" [resource]="resource"  />
+  <app-card-modal (closeModal)="closeModal()" [resource]="resource" />
 }

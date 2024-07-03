@@ -13,10 +13,18 @@
   transition: 300ms;
   height: 70px;
 
+  .link-container{
+    width: 100%;
+  }
+
   a {
     text-decoration: none;
     color: #313131;
     font-weight: 500;
+  }
+
+  a:hover{
+    text-decoration: underline;
   }
 
   &:hover {
@@ -25,22 +33,16 @@
   }
 }
 
-.resource-card.expanded {
-  height: auto;
-}
-
 .resource-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5em;
+
   .resource-icon {
     width: 20px;
     height: 20px;
     margin-right: 5px;
-  }
-  a {
-    width: 100%;
   }
 }
 
@@ -53,15 +55,4 @@
 
 .tags-tag {
   font-size: 0.7em;
-}
-
-#dust-animation{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 150%;
-  height: 150%;
-  z-index: -1000;
-  pointer-events: none;
 }
