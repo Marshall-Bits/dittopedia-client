@@ -12,3 +12,12 @@ export interface CategoryResources {
   category: string;
   resources: Resource[];
 }
+
+export interface UserInfo {
+  email: string;
+  role: string;
+  exp: number;
+  iat: number;
+  username: string;
+  _id: string;
+}
