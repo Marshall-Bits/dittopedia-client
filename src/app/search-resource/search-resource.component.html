@@ -33,15 +33,19 @@
     <!-- <app-resource-card [resource]="resource" /> -->
   }
   @empty{
-    <p>No results found</p>
+    @if(!loading && !errorMessage){
+      <p>No results found</p>
+    }
   }
   @if(errorMessage){
-<p class="error">{{ errorMessage }}</p>
-}
+    <p class="error">{{ errorMessage }}</p>
+  }
 
-<a id="add-link" routerLink="/resource/create">
-  <img id="add-icon" src="./add.svg" alt="add icon" />
-</a>
+@if(isAdmin){
+  <a id="add-link" routerLink="/resource/create">
+    <img id="add-icon" src="./add.svg" alt="add icon" />
+  </a>
+}
 
 @if (showFilterModal){
 <app-filter-modal
