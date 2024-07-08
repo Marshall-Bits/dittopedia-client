@@ -13,6 +13,12 @@
   transition: 300ms;
   height: 70px;
 
+  view-timeline-name: --display;
+  animation-name: appear;
+  animation-fill-mode: both;
+  animation-timeline: --display;
+  animation-range: entry 15% cover 20%;
+
   .link-container{
     width: 100%;
   }
@@ -55,4 +61,16 @@
 
 .tags-tag {
   font-size: 0.7em;
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
 }
