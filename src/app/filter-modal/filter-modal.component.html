@@ -1,5 +1,5 @@
 <div (click)="close()" class="layout"></div>
-<section class="modal">
+<section class="modal" id="filter-container">
   <img
     (click)="close()"
     class="close-icon"
@@ -7,12 +7,12 @@
     alt="close icon"
   />
   <div class="checkbox-container">
-    <label>Books </label>
-    <input type="checkbox" (click)="toggleFilterOption('book')" />
+    <label>Assets </label>
+    <input type="checkbox" (click)="toggleFilterOption('assets')" />
   </div>
   <div class="checkbox-container">
-    <label>Videos </label>
-    <input type="checkbox" (click)="toggleFilterOption('video')" />
+    <label>Books </label>
+    <input type="checkbox" (click)="toggleFilterOption('book')" />
   </div>
   <div class="checkbox-container">
     <label>Courses </label>
@@ -23,16 +23,16 @@
     <input type="checkbox" (click)="toggleFilterOption('documentation')" />
   </div>
   <div class="checkbox-container">
-    <label>Assets </label>
-    <input type="checkbox" (click)="toggleFilterOption('assets')" />
+    <label>News </label>
+    <input type="checkbox" (click)="toggleFilterOption('news')" />
   </div>
   <div class="checkbox-container">
     <label>Tools </label>
     <input type="checkbox" (click)="toggleFilterOption('tools')" />
   </div>
   <div class="checkbox-container">
-    <label>News </label>
-    <input type="checkbox" (click)="toggleFilterOption('news')" />
+    <label>Videos </label>
+    <input type="checkbox" (click)="toggleFilterOption('video')" />
   </div>
   <button (click)="filter()" class="btn">Filter</button>
 </section>

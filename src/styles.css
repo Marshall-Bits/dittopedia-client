@@ -1,78 +1,77 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
 }
 
-.btn{
-    padding: 1em;
-    border-radius: 5px;
-    margin: 0 auto;
-    background-color: #007bff;
-    width: 300px;
-    color: white;
-    border: none;
-    cursor: pointer;
+.btn {
+  padding: 1em;
+  border-radius: 5px;
+  margin: 0 auto;
+  background-color: #007bff;
+  width: 300px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.cancel{
-    background-color: #dc3545;
+.cancel {
+  background-color: #dc3545;
 }
 
 input {
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 300px;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
-.layout{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-    z-index: 2;
+.layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
-.modal{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    top: 50%;
-    left: 50%;
-    z-index: 3;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 500px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    .btn{
-        width: 100%;
-    }
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  .btn {
+    width: 100%;
+  }
 }
 
-.close-icon{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    width: 45px;
-    padding: 10px;
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 45px;
+  padding: 10px;
 }
