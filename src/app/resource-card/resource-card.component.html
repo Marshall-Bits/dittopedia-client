@@ -8,15 +8,25 @@
     <div class="link-container">
       <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
     </div>
-    <img
+    <!--   <img
       (click)="openModal()"
       class="zoom-icon"
       src="./zoom.svg"
       alt="zoom icon"
-    />
+    /> -->
+  </div>
+  <p>{{ resource?.description }}</p>
+  <div>
+    <hr />
+    <section class="categories-container">
+      <span class="category-card">{{ resource?.mainCategory }}</span>
+      @for (category of resource?.categories; track $index){
+      <span class="category-card">{{ category }}</span>
+      }
+    </section>
   </div>
 </li>
 
 @if(showModal){
-  <app-card-modal (closeModal)="closeModal()" [resource]="resource" />
+<app-card-modal (closeModal)="closeModal()" [resource]="resource" />
 }

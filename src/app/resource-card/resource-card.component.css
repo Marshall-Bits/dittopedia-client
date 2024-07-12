@@ -2,7 +2,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1em;
   background-color: rgba(255, 255, 255, 0.651);
   padding: 1em;
@@ -11,7 +11,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
   transition: 300ms;
-  height: 70px;
+  min-height: 300px;
 
   view-timeline-name: --display;
   animation-name: appear;
@@ -61,6 +61,25 @@
 
 .tags-tag {
   font-size: 0.7em;
+}
+
+.category-card {
+  padding: 0.5em 1em;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.categories-container {
+  margin-top: 1em;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.main-category-container{
+  font-size: .8em;
 }
 
 
