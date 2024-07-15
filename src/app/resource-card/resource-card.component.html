@@ -1,12 +1,12 @@
 <li class="resource-card {{ arrowUp && 'expanded' }}">
-  <div class="resource-title">
+  <div class="resource-title-container">
     <img
       class="resource-icon"
       src="{{ resource?.favIcon }}"
       alt="{{ resource?.title }}"
     />
     <div class="link-container">
-      <a href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+      <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
     </div>
     <!--   <img
       (click)="openModal()"

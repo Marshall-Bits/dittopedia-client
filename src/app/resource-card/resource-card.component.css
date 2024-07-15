@@ -1,25 +1,24 @@
 .resource-card {
-  list-style-type: none;
+  background-color: rgba(255, 255, 255, 0.651);
+  border-radius: 1rem;
+  box-shadow: .5rem .5rem 1rem 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  gap: 4rem;
   justify-content: space-between;
-  gap: 1em;
-  background-color: rgba(255, 255, 255, 0.651);
-  padding: 1em;
-  width: 300px;
-  min-height: 70px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+  list-style-type: none;
+  min-height: 75rem;
+  padding: 4rem;
   transition: 300ms;
-  min-height: 300px;
+  width: 75rem;
 
-  view-timeline-name: --display;
-  animation-name: appear;
   animation-fill-mode: both;
-  animation-timeline: --display;
+  animation-name: appear;
   animation-range: entry 15% cover 20%;
+  animation-timeline: --display;
+  view-timeline-name: --display;
 
-  .link-container{
+  .link-container {
     width: 100%;
   }
 
@@ -29,59 +28,63 @@
     font-weight: 500;
   }
 
-  a:hover{
+  a:hover {
     text-decoration: underline;
   }
 
   &:hover {
-    transform: translate(-5px, -5px);
-    box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 3rem 3rem 2rem 0 rgba(0, 0, 0, 0.2);
+    transform: translate(-1rem, -1rem);
   }
 }
 
-.resource-title {
-  display: flex;
+.resource-title-container {
   align-items: center;
+  display: flex;
+  gap: 1rem;
   justify-content: space-between;
-  gap: 0.5em;
 
   .resource-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+    height: 5rem;
+    margin-right: 1rem;
+    width: 5rem;
+  }
+
+  .resource-title {
+    font-size: 4rem;
   }
 }
 
-.zoom-icon {
+/* .zoom-icon {
   padding: 6px;
   width: 35px;
   height: 35px;
   cursor: pointer;
-}
+} */
 
 .tags-tag {
-  font-size: 0.7em;
+  font-size: 4rem;
 }
 
 .category-card {
-  padding: 0.5em 1em;
   background-color: #f0f0f0;
-  border-radius: 5px;
-  font-size: 0.7em;
+  border-radius: 1rem;
   cursor: pointer;
+  font-size: 3rem;
+  padding: 2rem 4rem;
+  transition: 300ms;
+}
+
+.category-card:hover {
+  background-color: #e0e0e0;
 }
 
 .categories-container {
-  margin-top: 1em;
   display: flex;
-  gap: 0.5em;
   flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
 }
-
-.main-category-container{
-  font-size: .8em;
-}
-
 
 @keyframes appear {
   from {
