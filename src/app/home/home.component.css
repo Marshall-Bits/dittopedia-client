@@ -2,18 +2,19 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  max-width: 400px;
+  gap: 4rem;
+  max-width: 100rem; 
+  font-size: 4rem;
   h2 {
-    font-size: 1.5em;
+    font-size: 5rem;
   }
 }
 
 .avatar,
 .ditto {
-  padding: 0.3em;
-  width: 100px;
-  height: 100px;
+  padding: 1rem;
+  width: 25rem;
+  height: 25rem;
   margin: 0 auto;
   display: block;
 }
@@ -21,7 +22,7 @@
 .avatar {
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 }
 
 .social-container {
@@ -31,23 +32,23 @@
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+  width: 10rem;
+  height: 10rem;
   display: block;
 }
 
 .disclaimer {
-  font-size: 0.8em;
+  font-size: 3rem; /*if the root is 4px, this will be 3.2px*/
 }
 
 @media screen and (width> 960px) {
   :host {
-    max-width: 700px;
-    font-size: 1.2em;
+    max-width: 175rem;
+    font-size: 5rem;
   }
 
-  .ditto{
-    width: 150px;
-    height: 150px;
+  .ditto {
+    width: 25rem;
+    height: 25rem;
   }
 }
