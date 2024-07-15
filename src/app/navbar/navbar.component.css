@@ -15,7 +15,7 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8rem;
-  margin: 0 auto;
+  margin: 0  auto 8rem;
   max-width: 200rem; 
   
   h1{
