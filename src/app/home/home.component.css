@@ -1,10 +1,11 @@
 :host {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  max-width: 100rem; 
   font-size: 4rem;
+  gap: 4rem;
+  margin: 0 auto;
+  max-width: 100rem;
+
   h2 {
     font-size: 5rem;
   }
@@ -12,11 +13,11 @@
 
 .avatar,
 .ditto {
-  padding: 1rem;
-  width: 25rem;
+  display: block;
   height: 25rem;
   margin: 0 auto;
-  display: block;
+  padding: 1rem;
+  width: 25rem;
 }
 
 .avatar {
@@ -26,29 +27,33 @@
 }
 
 .social-container {
-  width: 100%;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .social-icon {
-  width: 10rem;
-  height: 10rem;
   display: block;
+  height: 10rem;
+  width: 10rem;
 }
 
 .disclaimer {
-  font-size: 3rem; /*if the root is 4px, this will be 3.2px*/
+  font-size: 3rem;
 }
 
 @media screen and (width> 960px) {
   :host {
-    max-width: 175rem;
     font-size: 5rem;
+    max-width: 175rem;
+
+    h2 {
+      font-size: 6rem;
+    }
   }
 
   .ditto {
-    width: 25rem;
     height: 25rem;
+    width: 25rem;
   }
 }

@@ -15,11 +15,11 @@ body {
 }
 
 .btn {
-  padding: 1em;
-  border-radius: 5px;
+  padding: 4rem;
+  border-radius: 1rem;
   margin: 0 auto;
   background-color: #007bff;
-  width: 300px;
+  width: 75rem; 
   color: white;
   border: none;
   cursor: pointer;
