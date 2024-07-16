@@ -3,19 +3,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2em;
+    padding: 0 8rem;
 
     label{
-        font-size: 1.3em;
+        font-size: 6rem;
     }
 
     input{
-        padding: 10px;
-        width: 35px;
-        height: 35px;
+        padding: 2.5rem;
+        width: 9rem;
+        height: 9rem;
     }
 }
 
 #filter-container{
-    padding: 3em 2em 1em;
+    padding: 12rem 8rem 4rem;
 }
