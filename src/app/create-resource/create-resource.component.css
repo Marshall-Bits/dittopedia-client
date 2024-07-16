@@ -1,28 +1,28 @@
 :host {
-  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 form {
-  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 4rem;
+  width: 100%;
 
   h3 {
-    font-size: 1.5em;
+    font-size: 6rem;
     font-weight: bold;
   }
 
   h4 {
-    width: 100%;
     overflow-wrap: break-word;
+    width: 100%;
   }
 
   p {
@@ -30,57 +30,57 @@ form {
   }
 
   label {
-    font-size: 1.3em;
-    width: 100%;
-    text-align: left;
+    font-size: 5rem;
     font-weight: bold;
+    text-align: left;
+    width: 100%;
   }
 }
 
 .description-input {
-  width: 100%;
-  height: 100px;
-  padding: 0.5em 1em;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 0.5rem solid #ccc;
   font-family: "Roboto", sans-serif;
+  height: 25rem;
+  padding: 2rem 4rem;
   resize: none;
+  width: 100%;
 }
 
 .category-tag {
   display: flex;
   align-items: center;
-  padding: 0 0.5em 0 1rem;
+  padding: 0 1rem 0 4rem;
   background-color: #f0f0f0;
-  border-radius: 5px;
-  gap: 1em;
-  font-size: 0.7em;
+  border-radius: 1rem;
+  gap: 4rem;
+  font-size: 3rem;
 }
 
 .categories-container {
   display: flex;
-  gap: 0.5em;
+  gap: 2rem;
   flex-wrap: wrap;
   max-width: 100%;
-  padding: 1em 0;
+  padding: 4rem 0;
 }
 
 .delete-icon {
   padding: 10px;
-  width: 35px;
-  height: 35px;
+  width: 9rem;
+  height: 9rem;
   cursor: pointer;
 }
 
 .add-category-container {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 75rem;
   input {
     width: 100%;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    border: 0.5rem solid #ccc;
     font-family: "Roboto", sans-serif;
   }
 }
@@ -88,8 +88,8 @@ form {
 .add-icon {
   position: absolute;
   height: 100%;
-  padding: 3px;
-  right: 0.5em;
+  padding: 1rem;
+  right: 2rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -100,11 +100,11 @@ form {
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 2rem;
 }
 
 #categorize-form {
-  max-width: 300px;
+  max-width: 75rem;
 }
 
 .btn-container {
@@ -112,7 +112,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1em;
+  gap: 4rem;
 }
 
 @media (width> 768px) {
