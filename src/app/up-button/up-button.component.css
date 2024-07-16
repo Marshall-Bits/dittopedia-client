@@ -1,21 +1,21 @@
 #btn-up {
   position: fixed;
-  bottom: 0.5em;
-  right: 0.5em;
+  bottom: 2rem;
+  right: 2rem;
   z-index: 1;
   background-color: #313131;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 17px;
+  width: 11rem;
+  height: 11rem;
+  font-size: 4rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img{
-    width: 35px;
+    width: 8rem;
   }
 }

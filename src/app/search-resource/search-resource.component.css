@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2em;
-  p{
+  gap: 8rem;
+  p {
     text-align: center;
   }
 }
@@ -14,7 +14,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 1em;
+  gap: 4rem;
 }
 
 #search-form {
@@ -22,14 +22,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
-  margin-bottom: 1em;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 
 #filter-icon {
   cursor: pointer;
-  width: 35px;
-  padding: 3px;
+  width: 8rem;
+  padding: 1rem;
   background-color: #313131;
   border-radius: 50%;
 }
@@ -37,13 +37,13 @@
 #input-section {
   width: 300px;
   display: flex;
-  gap: 1em;
+  gap: 4rem;
 }
 
 #add-icon {
-  margin-top: 2em;
+  margin-top: 8rem;
   cursor: pointer;
-  width: 35px;
+  width: 8rem;
   padding: 3px;
 }
 
@@ -52,15 +52,14 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 1em;
+  gap: 4rem;
 }
 
-#add-link{
+#add-link {
   text-align: center;
-  width: 35px;
+  width: 8rem;
   margin: 0 auto;
 }
-
 
 @media (width> 768px) {
   #search-form {
