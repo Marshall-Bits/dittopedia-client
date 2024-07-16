@@ -1,11 +1,11 @@
 .resource-card {
-  gap: 1em;
+  gap: 2rem;
   background-color: rgba(255, 255, 255, 0.651);
-  width: 300px;
-  min-height: 70px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
-  height: 70px;
+  width: 75rem;
+  min-height: 75rem;
+  border-radius: 1.25rem;
+  box-shadow: 0.25rem 0.25rem 1.25rem 0 rgba(0, 0, 0, 0.4);
+  height: 75rem;
   animation: slide-backgorund-color 2s infinite;
 }
 
@@ -19,5 +19,4 @@
   100% {
     background-color: rgba(255, 255, 255, 0.651);
   }
-    
 }
