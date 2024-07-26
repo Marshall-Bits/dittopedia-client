@@ -1,7 +1,7 @@
 .resource-card {
-  background-color: rgba(255, 255, 255, 0.651);
+  background-color: rgb(255, 255, 255);
   border-radius: 1rem;
-  box-shadow: .5rem .5rem 1rem 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -11,6 +11,9 @@
   padding: 4rem;
   transition: 300ms;
   width: 75rem;
+  position: relative;
+  overflow: hidden;
+
 
   animation-fill-mode: both;
   animation-name: appear;
@@ -43,7 +46,7 @@
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-
+  position: relative;
   .resource-icon {
     height: 5rem;
     margin-right: 1rem;
@@ -53,6 +56,20 @@
   .resource-title {
     font-size: 4rem;
   }
+}
+
+.background-card {
+  background-size: 100% 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(50px);
+  transform: scale(90);
+  top: 0;
+  left: 0;
+  width: 75rem;
+  height: 4rem;
+  position: absolute;
+  z-index: -1;
 }
 
 /* .zoom-icon {

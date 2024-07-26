@@ -1,19 +1,14 @@
 <li class="resource-card {{ arrowUp && 'expanded' }}">
-  <div class="resource-title-container">
+  <div  class="resource-title-container">
     <img
-      class="resource-icon"
-      src="{{ resource?.favIcon }}"
-      alt="{{ resource?.title }}"
+    class="resource-icon"
+    src="{{ resource?.favIcon }}"
+    alt="{{ resource?.title }}"
     />
     <div class="link-container">
+      <div class="background-card" [style.background-image]="'url(' + resource?.favIcon + ')'"></div>
       <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
     </div>
-    <!--   <img
-      (click)="openModal()"
-      class="zoom-icon"
-      src="./zoom.svg"
-      alt="zoom icon"
-    /> -->
   </div>
   <p>{{ resource?.description }}</p>
   <div>
@@ -28,5 +23,5 @@
 </li>
 
 @if(showModal){
-<app-card-modal (closeModal)="closeModal()" [resource]="resource" />
+  <app-card-modal (closeModal)="closeModal()" [resource]="resource" />
 }
