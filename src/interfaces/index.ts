@@ -6,6 +6,7 @@ export interface Resource {
   favIcon: string;
   categories: string[];
   mainCategory: string;
+  color: string;
 }
 
 export interface CategoryResources {

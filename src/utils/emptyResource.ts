@@ -7,6 +7,7 @@ const emptyResource: Resource = {
   favIcon: '',
   categories: [],
   mainCategory: '',
+  color: 'rgb(0, 0, 0)',
 };
 
 export default emptyResource;

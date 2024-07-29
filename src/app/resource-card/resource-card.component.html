@@ -1,9 +1,9 @@
-<li class="resource-card {{ arrowUp && 'expanded' }}">
+<li class="resource-card {{ arrowUp && 'expanded' }}" [style.backgroundColor]="resource?.color">
   <div class="resource-title-container">
     <img
       class="resource-icon"
-      src="{{ resource?.favIcon }}"
-      alt="{{ resource?.title }}"
+      [src]="resource?.favIcon"
+      [alt]="resource?.title"
     />
     <div class="link-container">
       <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
