@@ -11,12 +11,7 @@ import { CardModalComponent } from '../card-modal/card-modal.component';
 })
 export class ResourceCardComponent {
   @Input() resource: Resource | undefined;
-  arrowUp: boolean = false;
   showModal: boolean = false;
-
-  flipArrow() {
-    this.arrowUp = !this.arrowUp;
-  }
 
   openModal() {
     this.showModal = true;
