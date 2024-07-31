@@ -14,7 +14,7 @@
 
   animation-fill-mode: both;
   animation-name: appear;
-  animation-range: entry 15% cover 20%;
+  animation-range: entry 15% cover 30%;
   animation-timeline: --display;
   view-timeline-name: --display;
 
@@ -33,7 +33,7 @@
   }
 
   &:hover {
-    box-shadow: 3rem 3rem 2rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 3rem 3rem 1rem 0 rgba(0, 0, 0, 0.4);
     transform: translate(-1rem, -1rem);
   }
 }
@@ -89,7 +89,7 @@
 @keyframes appear {
   from {
     opacity: 0;
-    scale: 10%;
+    scale: 5%;
   }
   to {
     opacity: 1;

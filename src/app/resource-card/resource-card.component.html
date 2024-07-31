@@ -8,12 +8,6 @@
     <div class="link-container">
       <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
     </div>
-    <!--   <img
-      (click)="openModal()"
-      class="zoom-icon"
-      src="./zoom.svg"
-      alt="zoom icon"
-    /> -->
   </div>
   <p>{{ resource?.description }}</p>
   <div>
@@ -28,5 +22,5 @@
 </li>
 
 @if(showModal){
-<app-card-modal (closeModal)="closeModal()" [resource]="resource" />
+  <app-card-modal (closeModal)="closeModal()" [resource]="resource" />
 }
