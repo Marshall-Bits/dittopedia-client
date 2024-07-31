@@ -115,6 +115,11 @@ form {
   gap: 4rem;
 }
 
+.icon-image {
+  width: 8rem;
+  margin: 1px;
+}
+
 @media (width> 768px) {
   :host {
     text-align: center;
@@ -126,7 +131,7 @@ form {
     h4 {
       width: 100%;
     }
-    img {
+    .ditto-image {
       margin: 0 auto;
     }
   }
