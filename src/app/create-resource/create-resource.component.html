@@ -23,7 +23,12 @@
   <img class="icon-image" [src]="newResource.favIcon" alt="no image found" />
   <input [(ngModel)]="newResource.favIcon" name="favIcon" type="text" />
   <label for="color">Color</label>
-  <input [(ngModel)]="newResource.color" name="color" type="text" />
+  <input
+    class="color-square"
+    [(ngModel)]="newResource.color"
+    name="color"
+    type="color"
+  />
   <label for="description">Description</label>
   <textarea
     required

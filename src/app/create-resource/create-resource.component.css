@@ -115,9 +115,18 @@ form {
   gap: 4rem;
 }
 
-.icon-image {
+.icon-image, .color-square {
   width: 8rem;
+  height: 8rem;
   margin: 1px;
+  padding: 0;
+}
+
+input.color-square{
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  width: 100%;
 }
 
 @media (width> 768px) {
