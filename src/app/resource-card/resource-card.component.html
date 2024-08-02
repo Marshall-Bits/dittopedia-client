@@ -6,7 +6,9 @@
       [alt]="resource?.title"
     />
     <div class="link-container">
-      <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{ resource?.title }}</a>
+      <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{
+        resource?.title
+      }}</a>
     </div>
   </div>
   <p>{{ resource?.description }}</p>
@@ -19,8 +21,11 @@
       }
     </section>
   </div>
+  @if(isAdmin){
+  <a routerLink="{{ '/resource/edit/' + resource?._id }}">edit</a>
+  }
 </li>
 
 @if(showModal){
-  <app-card-modal (closeModal)="closeModal()" [resource]="resource" />
+<app-card-modal (closeModal)="closeModal()" [resource]="resource" />
 }
