@@ -1,1 +1,100 @@
-<p>edit-resource works!</p>
+@if(loading){
+<section class="loading-container">
+  <p>Ditto is getting the documentation...</p>
+  <img src="./ditto-reading.png" alt="ditto reading" />
+</section>
+} @else{
+<form
+  (keydown.enter)="$event.preventDefault()"
+  (submit)="updateResource($event)"
+>
+  <label for="title"> Title </label>
+
+  <input
+    type="text"
+    [(ngModel)]="updatedResource.title"
+    [value]="updatedResource.title"
+    name="title"
+  />
+
+  <label for="icon"> Icon </label>
+  <img
+    class="icon-image"
+    [src]="updatedResource.favIcon"
+    alt="no image found"
+  />
+  <input
+    type="text"
+    [(ngModel)]="updatedResource.favIcon"
+    [value]="updatedResource.favIcon"
+    name="icon"
+  />
+
+  <label for="color"> Color </label>
+
+  <input
+    class="color-square"
+    type="color"
+    [(ngModel)]="updatedResource.color"
+    [value]="updatedResource.color"
+    name="color"
+  />
+
+  <label for="description"> Description </label>
+
+  <textarea
+    class="description-input"
+    [(ngModel)]="updatedResource.description"
+    [value]="updatedResource.description"
+    name="description"
+  ></textarea>
+
+  <label for="mainCategory"> Main category </label>
+
+  <select
+    [(ngModel)]="updatedResource.mainCategory"
+    [value]="updatedResource.mainCategory"
+    name="mainCategory"
+  >
+    <option value="books">Books</option>
+    <option value="videos">Videos</option>
+    <option value="courses">Courses</option>
+    <option value="documentation">Documentation</option>
+    <option value="assets">Assets</option>
+    <option value="tools">Tools</option>
+    <option value="news">News</option>
+  </select>
+  <label for="category">Add categories</label>
+  <div class="add-category-container">
+    <input
+      [(ngModel)]="categoryInput"
+      (keyup.enter)="addCategory()"
+      name="category"
+      type="text"
+    />
+    <img
+      class="add-icon"
+      (click)="addCategory()"
+      src="./add.svg"
+      alt="add icon"
+    />
+  </div>
+  <section class="categories-container">
+    @for(category of updatedResource.categories; track $index){
+    <div class="category-tag">
+      {{ category }}
+      <img
+        (click)="deleteCategory($index)"
+        class="delete-icon"
+        src="./close.svg"
+        alt="close icon"
+      />
+    </div>
+    }
+  </section>
+  <section class="btn-container">
+    <button type="submit" class="btn">Update resource</button>
+    <button class="btn cancel" [routerLink]="['/search']">Cancel</button>
+  </section>
+</form>
+}
