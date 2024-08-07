@@ -18,6 +18,7 @@ export class ResourceCardComponent {
 
   queryChange(newQuery: string | undefined) {
     this.searchQueryChange.emit(newQuery);
+    window.scrollTo(0, 0);
   }
 
   openModal() {
