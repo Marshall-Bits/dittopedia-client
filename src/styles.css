@@ -11,7 +11,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 4rem;
-  background-image: linear-gradient(120deg, #ffe9a2 0%, #fdbb85 100%);
+  background-image: linear-gradient(120deg, #ffedb0 0%, #fdbb85 100%);
   min-height: 100vh;
 }
 
@@ -27,7 +27,8 @@ body {
 }
 
 .cancel {
-  background-color: #dc3545;
+  background-color: #ffffff;
+  color: #007bff;
 }
 
 input, select {

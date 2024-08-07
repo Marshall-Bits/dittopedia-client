@@ -72,6 +72,30 @@ export class EditResourceComponent implements OnInit {
       });
   }
 
+  deleteResource(event: Event) {
+    event.preventDefault();
+    const accessToken = localStorage.getItem('accessToken');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${accessToken}`,
+    });
+
+    if (!accessToken) {
+      return;
+    }
+
+    this.loading = true;
+
+    this.http
+      .delete<Resource>(
+        `${environment.apiUrl}/resource/${this.resourceId}`,
+        { headers }
+      )
+      .subscribe(() => {
+        this.router.navigate(['/search']);
+      }
+    );
+  }
+
   addCategory() {
     if (!this.categoryInput) {
       return;

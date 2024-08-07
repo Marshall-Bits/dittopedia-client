@@ -150,3 +150,12 @@ input.color-square{
     justify-content: space-between;
   }
 }
+
+.delete-resource{
+  background-color: #dc3545;
+  color: white;
+  margin-top: 15rem;
+  text-align: center;
+  width: 50%;
+  font-size: 3rem;
+}
