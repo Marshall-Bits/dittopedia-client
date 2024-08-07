@@ -35,6 +35,11 @@ export class SearchResourceComponent implements OnInit {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
+  onSearchQueryChange(newQuery: any) {
+    this.searchQuery = newQuery;
+    this.onSearch();
+  }
+
   ngOnInit() {
     this.getResources();
     this.authService.getUserInfo().subscribe();

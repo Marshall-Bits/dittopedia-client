@@ -15,9 +15,15 @@
   <div>
     <hr />
     <section class="categories-container">
-      <span class="category-card">{{ resource?.mainCategory }}</span>
+      <span
+        (click)="queryChange(resource?.mainCategory)"
+        class="category-card"
+        >{{ resource?.mainCategory }}</span
+      >
       @for (category of resource?.categories; track $index){
-      <span class="category-card">{{ category }}</span>
+      <span (click)="queryChange(category)" class="category-card">{{
+        category
+      }}</span>
       }
     </section>
   </div>

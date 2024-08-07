@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../interfaces';
 import { CardModalComponent } from '../card-modal/card-modal.component';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,12 @@ import { RouterLink } from '@angular/router';
 export class ResourceCardComponent {
   @Input() resource: Resource | undefined;
   @Input() isAdmin: Boolean = false;
+  @Output() searchQueryChange = new EventEmitter<string>();
   showModal: boolean = false;
+
+  queryChange(newQuery: string | undefined) {
+    this.searchQueryChange.emit(newQuery);
+  }
 
   openModal() {
     this.showModal = true;
