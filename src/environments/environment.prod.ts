@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://dittopedia-api.adaptable.app',
+  apiUrl: 'https://dittopedia-api.vercel.app',
 };
