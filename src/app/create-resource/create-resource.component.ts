@@ -11,7 +11,7 @@ import { environment } from '../../environments/environment';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './create-resource.component.html',
-  styleUrl: './create-resource.component.css',
+  styleUrl: '../shared/forms.css',
 })
 export class CreateResourceComponent {
   url: string = '';

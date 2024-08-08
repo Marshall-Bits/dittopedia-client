@@ -11,7 +11,7 @@ import { catchError, of } from 'rxjs';
   standalone: true,
   imports: [FormsModule, RouterLink],
   templateUrl: './edit-resource.component.html',
-  styleUrl: '../create-resource/create-resource.component.css',
+  styleUrl: '../shared/forms.css',
 })
 export class EditResourceComponent implements OnInit {
   updatedResource: Resource = emptyResource;
