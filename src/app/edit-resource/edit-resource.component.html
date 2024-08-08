@@ -3,6 +3,12 @@
   <p>Ditto is getting the documentation...</p>
   <img src="./ditto-reading.png" alt="ditto reading" />
 </section>
+} @else if(errorMessage){
+<section class="error-container">
+  <p>{{ errorMessage }}</p>
+  <img src="./ditto-sad.png" alt="ditto error" />
+  <button class="btn" [routerLink]="['/search']">Back</button>
+</section>
 } @else{
 <form
   (keydown.enter)="$event.preventDefault()"
@@ -97,5 +103,7 @@
     <button class="btn cancel" [routerLink]="['/search']">Cancel</button>
   </section>
 </form>
-<p class="btn delete-resource" (click)="deleteResource($event)">Delete resource</p>
+<p class="btn delete-resource" (click)="deleteResource($event)">
+  Delete resource
+</p>
 }

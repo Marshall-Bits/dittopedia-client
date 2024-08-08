@@ -5,6 +5,7 @@ import emptyResource from '../../utils/emptyResource';
 import { Resource } from '../../interfaces';
 import { environment } from '../../environments/environment';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 @Component({
   selector: 'app-edit-resource',
   standalone: true,
@@ -17,6 +18,7 @@ export class EditResourceComponent implements OnInit {
   loading: boolean = false;
   resourceId: string | null = null;
   categoryInput: string = '';
+  errorMessage: string = '';
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -42,6 +44,14 @@ export class EditResourceComponent implements OnInit {
       .get<Resource>(`${environment.apiUrl}/resource/${this.resourceId}`, {
         headers,
       })
+      .pipe(
+        catchError((error) => {
+          console.log('Error fetching resource', error);
+          this.loading = false;
+          this.errorMessage = 'Error fetching resource';
+          return of(emptyResource);
+        })
+      )
       .subscribe((resource) => {
         this.updatedResource = resource;
         this.loading = false;
@@ -86,14 +96,12 @@ export class EditResourceComponent implements OnInit {
     this.loading = true;
 
     this.http
-      .delete<Resource>(
-        `${environment.apiUrl}/resource/${this.resourceId}`,
-        { headers }
-      )
+      .delete<Resource>(`${environment.apiUrl}/resource/${this.resourceId}`, {
+        headers,
+      })
       .subscribe(() => {
         this.router.navigate(['/search']);
-      }
-    );
+      });
   }
 
   addCategory() {
