@@ -1,38 +1,36 @@
 <div (click)="close()" class="layout"></div>
-<section class="modal" id="filter-container">
+<section class="modal">
   <img
     (click)="close()"
     class="close-icon"
     src="./close.svg"
     alt="close icon"
   />
-  <div class="checkbox-container">
-    <label>Assets </label>
-    <input type="checkbox" (click)="toggleFilterOption('assets')" />
-  </div>
-  <div class="checkbox-container">
-    <label>Books </label>
-    <input type="checkbox" (click)="toggleFilterOption('book')" />
-  </div>
-  <div class="checkbox-container">
-    <label>Courses </label>
-    <input type="checkbox" (click)="toggleFilterOption('courses')" />
-  </div>
-  <div class="checkbox-container">
-    <label>Docs </label>
-    <input type="checkbox" (click)="toggleFilterOption('documentation')" />
-  </div>
-  <div class="checkbox-container">
-    <label>News </label>
-    <input type="checkbox" (click)="toggleFilterOption('news')" />
-  </div>
-  <div class="checkbox-container">
-    <label>Tools </label>
-    <input type="checkbox" (click)="toggleFilterOption('tools')" />
-  </div>
-  <div class="checkbox-container">
-    <label>Videos </label>
-    <input type="checkbox" (click)="toggleFilterOption('video')" />
-  </div>
+  <ul id="filter-container">
+    @if(isLoading){ @for(card of emptyCards; track $index){
+    <li class="checkbox-container loading"></li>
+    } }@else{ @for(filter of filtersAvailable; track $index){
+    <li
+      class="checkbox-container"
+      (click)="toggleFilterOption(filter)"
+      [class.selected]="filterOptions.includes(filter)"
+    >
+      {{ filter }}
+    </li>
+    } }
+  </ul>
+  <p class="pages-container">{{ page }}/{{ totalPages }}</p>
   <button (click)="filter()" class="btn">Filter</button>
+  <img
+    (click)="updatePage(page - 1)"
+    id="left-arrow"
+    src="./left.svg"
+    alt="left arrow"
+  />
+  <img
+    (click)="updatePage(page + 1)"
+    id="right-arrow"
+    src="./right.svg"
+    alt="right arrow"
+  />
 </section>

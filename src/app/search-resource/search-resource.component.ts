@@ -32,12 +32,15 @@ export class SearchResourceComponent implements OnInit {
   loading: boolean = false;
   isAdmin: boolean = false;
   loadingCards = new Array(3);
+  filters: string[] = [];
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  onSearchQueryChange(newQuery: any) {
-    this.searchQuery = newQuery;
-    this.onSearch();
+  onAddFilter(newFilter: any) {
+    if (!this.filters.includes(newFilter)) {
+      this.filters.push(newFilter);
+      this.onSearch();
+    }
   }
 
   ngOnInit() {
@@ -54,6 +57,7 @@ export class SearchResourceComponent implements OnInit {
     let params = new HttpParams();
     this.loading = true;
     this.searchQueries.push(this.searchQuery);
+    this.searchQueries.push(...this.filters);
 
     this.searchQueries.forEach((query) => {
       params = params.append('searchQuery', query);
@@ -81,8 +85,13 @@ export class SearchResourceComponent implements OnInit {
     this.getResources();
   }
 
+  deleteFilter(filter: string) {
+    this.filters = this.filters.filter((f) => f !== filter);
+    this.getResources();
+  }
+
   onFilter(filterOptions: string[]) {
-    this.searchQueries = this.searchQueries.concat(filterOptions);
+    this.filters = filterOptions;
     this.getResources();
   }
 

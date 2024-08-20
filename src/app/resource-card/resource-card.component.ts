@@ -13,12 +13,12 @@ import { RouterLink } from '@angular/router';
 export class ResourceCardComponent {
   @Input() resource: Resource | undefined;
   @Input() isAdmin: Boolean = false;
-  @Output() searchQueryChange = new EventEmitter<string>();
+  @Output() addFilter = new EventEmitter<string>();
   showModal: boolean = false;
 
   queryChange(newQuery: string | undefined) {
-    this.searchQueryChange.emit(newQuery);
-    window.scrollTo(0, 0);
+    this.addFilter.emit(newQuery);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   openModal() {

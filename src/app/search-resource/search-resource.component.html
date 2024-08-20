@@ -8,14 +8,19 @@
       type="text"
       placeholder="Search for resources..."
     />
-    <img
-      (click)="toggleFilterModal()"
-      id="filter-icon"
-      src="./filter.svg"
-      alt="filter icon"
-    />
+    <div (click)="toggleFilterModal()" id="filter-icon">
+      <img src="./filter.svg" alt="filter icon" />
+    </div>
   </section>
 </form>
+
+<div class="filters-container">
+  @for(filter of filters; track $index){
+  <div (click)="deleteFilter(filter)" class="filter-card">
+    <p>{{ filter }}</p>
+  </div>
+  }
+</div>
 
 @if(loading){
 <div class="results-container">
@@ -32,8 +37,10 @@
   <ul class="resources-container">
     @for(resource of result.resources; track resource._id){
     <app-resource-card
-    (searchQueryChange)="onSearchQueryChange($event)"
-    [isAdmin]="isAdmin" [resource]="resource" />
+      (addFilter)="onAddFilter($event)"
+      [isAdmin]="isAdmin"
+      [resource]="resource"
+    />
     }
   </ul>
 </div>

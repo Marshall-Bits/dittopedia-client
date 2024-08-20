@@ -28,10 +28,17 @@
 
 #filter-icon {
   cursor: pointer;
-  width: 8rem;
-  padding: 1rem;
+  padding: 2rem;
   background-color: #313131;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 #input-section {
@@ -61,6 +68,27 @@
   margin: 0 auto;
 }
 
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.filter-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 5rem;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  background-color: #75e59c;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 3rem;
+  animation: grow-and-shrink 300ms;
+}
+
 @media (width> 768px) {
   #search-form {
     flex-direction: column;
@@ -74,5 +102,17 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
   }
 }
