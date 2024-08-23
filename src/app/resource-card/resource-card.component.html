@@ -4,6 +4,7 @@
       class="resource-icon"
       [src]="resource?.favIcon"
       [alt]="resource?.title"
+      (error)="onImageError($event)"
     />
     <div class="link-container">
       <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{

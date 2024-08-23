@@ -16,6 +16,10 @@ export class ResourceCardComponent {
   @Output() addFilter = new EventEmitter<string>();
   showModal: boolean = false;
 
+  onImageError(event: any) {
+    event.target.src = './book.svg';
+  }
+
   queryChange(newQuery: string | undefined) {
     this.addFilter.emit(newQuery);
     window.scrollTo({ top: 0, behavior: 'instant' });
