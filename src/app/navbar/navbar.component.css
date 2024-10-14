@@ -13,9 +13,8 @@ nav {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8rem;
   margin: 0  auto 8rem;
-  max-width: 200rem; 
+  max-width: 240rem; 
   
   a{
     color: white;
@@ -23,3 +22,16 @@ nav {
     padding: 5rem;
   }
 }
+
+@media screen and (width> calc(600px + 2em)) {
+  .main {
+    width: calc(600px + 1em);
+  }
+}
+
+@media screen and (width> calc(900px + 3em)) {
+  .main {
+    width: calc(900px + 2em);
+  }
+}
+
