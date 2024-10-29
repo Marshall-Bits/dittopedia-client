@@ -1,33 +1,18 @@
-<li class="resource-card" [style.backgroundColor]="resource?.color">
-  <div class="resource-title-container">
-    <img
-      class="resource-icon"
-      [src]="resource?.favIcon"
-      [alt]="resource?.title"
-      (error)="onImageError($event)"
-    />
-    <div class="link-container">
-      <a class="resource-title" href="{{ resource?.url }}" target="_blank">{{
-        resource?.title
-      }}</a>
-    </div>
-  </div>
+<li class="resource-card">
+  <h2 class="resource-title">{{ resource?.title }}</h2>
   <p>{{ resource?.description }}</p>
-  <div>
-    <hr />
-    <section class="categories-container">
-      <span
-        (click)="queryChange(resource?.mainCategory)"
-        class="category-card"
-        >{{ resource?.mainCategory }}</span
-      >
-      @for (category of resource?.categories; track $index){
-      <span (click)="queryChange(category)" class="category-card">{{
-        category
-      }}</span>
-      }
-    </section>
-  </div>
+
+  <a class="resource-link-container" href="{{ resource?.url }}" target="_blank">
+    <div class="resource-link">
+      {{ getFormattedUrl(resource?.url) }}
+    </div>
+    <span class="resource-arrow"
+      ><img
+        class="arrow-icon"
+        src="./arrow-right.svg"
+        alt="arrow pointing right"
+    /></span>
+  </a>
   @if(isAdmin){
   <a routerLink="{{ '/resource/edit/' + resource?._id }}">edit</a>
   }

@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../interfaces';
 import { CardModalComponent } from '../card-modal/card-modal.component';
 import { RouterLink } from '@angular/router';
+import { formatUrl } from '../../utils/formatUrl';
 
 @Component({
   selector: 'app-resource-card',
@@ -15,6 +16,10 @@ export class ResourceCardComponent {
   @Input() isAdmin: Boolean = false;
   @Output() addFilter = new EventEmitter<string>();
   showModal: boolean = false;
+
+  getFormattedUrl(url: string | undefined) {
+    return formatUrl(url || '');
+  }
 
   onImageError(event: any) {
     event.target.src = './book.svg';

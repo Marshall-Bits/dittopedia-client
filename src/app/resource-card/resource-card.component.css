@@ -1,16 +1,16 @@
 .resource-card {
   background-color: rgba(255, 255, 255, 0.651);
   border-radius: 1rem;
-  box-shadow: .5rem .5rem 1rem 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   gap: 4rem;
   justify-content: space-between;
   list-style-type: none;
-  min-height: 75rem;
+  min-height: 84rem;
   padding: 4rem;
   transition: 300ms;
-  width: 75rem;
+  width: 71rem;
 
   animation-fill-mode: both;
   animation-name: appear;
@@ -18,14 +18,17 @@
   animation-timeline: --display;
   view-timeline-name: --display;
 
-  .link-container {
-    width: 100%;
+  h2 {
+    font-size: 6rem;
+  }
+
+  p{
+    flex-grow: 1;
   }
 
   a {
     text-decoration: none;
     color: #000000;
-    font-weight: 550;
   }
 
   a:hover {
@@ -38,21 +41,27 @@
   }
 }
 
-.resource-title-container {
-  align-items: center;
+.resource-link-container {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+}
 
-  .resource-icon {
-    height: 5rem;
-    margin-right: 1rem;
-    width: 5rem;
-  }
+.resource-link,
+.resource-arrow {
+  background-color: #cacaca;
+  padding: 2rem;
+}
 
-  .resource-title {
-    font-size: 4rem;
-  }
+.resource-link {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  width: 100%;
+}
+
+.resource-arrow {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .tags-tag {
