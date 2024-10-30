@@ -32,14 +32,14 @@
     color: #000000;
   }
 
-  a:hover {
+  /* a:hover {
     text-decoration: underline;
-  }
+  } */
 
-  &:hover {
+  /* &:hover {
     box-shadow: 3rem 3rem 1rem 0 rgba(0, 0, 0, 0.4);
     transform: translate(-1rem, -1rem);
-  }
+  } */
 }
 
 .resource-link-container {
