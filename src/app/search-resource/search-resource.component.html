@@ -21,41 +21,42 @@
   </div>
   }
 </div>
-
-@if(loading){
-<div class="results-container">
-  <h3>LOADING RESOURCES</h3>
-  <ul class="resources-container">
-    @for (card of loadingCards; track $index){
-    <app-loading-card />
-    }
-  </ul>
+<div class="all-resources">
+  @if(loading){
+  <div class="resources-container">
+    <h3>LOADING RESOURCES</h3>
+    <ul class="resources-ul">
+      @for (card of loadingCards; track $index){
+      <app-loading-card />
+      }
+    </ul>
+  </div>
+  } @for (result of searchResults; track $index){
+  <div class="resources-container">
+    <h3>{{ result.category.toUpperCase() }}</h3>
+    <ul class="resources-ul">
+      @for(resource of result.resources; track resource._id){
+      <app-resource-card
+        (addFilter)="onAddFilter($event)"
+        [isAdmin]="isAdmin"
+        [resource]="resource"
+      />
+      }
+    </ul>
+  </div>
+  <!-- <app-resource-card [resource]="resource" /> -->
+  } @empty{ @if(!loading && !errorMessage){
+  <p>No results found</p>
+  } } @if(errorMessage){
+  <p class="error">{{ errorMessage }}</p>
+  } @if(isAdmin){
+  <a id="add-link" routerLink="/resource/create">
+    <img id="add-icon" src="./add.svg" alt="add icon" />
+  </a>
+  } @if (showFilterModal){
+  <app-filter-modal
+    (closeModal)="toggleFilterModal()"
+    (filterOptionsChange)="onFilter($event)"
+  />
+  }
 </div>
-} @for (result of searchResults; track $index){
-<div class="results-container">
-  <h3>{{ result.category.toUpperCase() }}</h3>
-  <ul class="resources-container">
-    @for(resource of result.resources; track resource._id){
-    <app-resource-card
-      (addFilter)="onAddFilter($event)"
-      [isAdmin]="isAdmin"
-      [resource]="resource"
-    />
-    }
-  </ul>
-</div>
-<!-- <app-resource-card [resource]="resource" /> -->
-} @empty{ @if(!loading && !errorMessage){
-<p>No results found</p>
-} } @if(errorMessage){
-<p class="error">{{ errorMessage }}</p>
-} @if(isAdmin){
-<a id="add-link" routerLink="/resource/create">
-  <img id="add-icon" src="./add.svg" alt="add icon" />
-</a>
-} @if (showFilterModal){
-<app-filter-modal
-  (closeModal)="toggleFilterModal()"
-  (filterOptionsChange)="onFilter($event)"
-/>
-}

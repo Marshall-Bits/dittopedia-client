@@ -8,9 +8,10 @@
   justify-content: space-between;
   list-style-type: none;
   min-height: 84rem;
+  width: 71rem;
   padding: 4rem;
   transition: 300ms;
-  width: 71rem;
+  grid-column: span 3;
 
   animation-fill-mode: both;
   animation-name: appear;

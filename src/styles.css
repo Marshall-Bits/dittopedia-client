@@ -9,6 +9,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   font-size: 4rem;
   background-image: linear-gradient(120deg, #ffedb0 0%, #fdbb85 100%);

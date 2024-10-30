@@ -4,7 +4,9 @@
   width: 300px;
 }
 
-@media screen and (width> calc(600px + 2em)) {
+
+
+@media screen and (width > calc(600px + 2em)) {
   .main {
     width: calc(600px + 1em);
   }
@@ -12,6 +14,6 @@
 
 @media screen and (width> calc(900px + 3em)) {
   .main {
-    width: calc(900px + 2em);
+    width: 70vw;
   }
 }
